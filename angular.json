@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularCorte"
+    }
+  },
+  "defaultProject": "AngularCorte",
+  "cli": {
+    "analytics": "ecf9ad16-b2b2-4f10-868c-3bf3082c8955"
+  }
 }

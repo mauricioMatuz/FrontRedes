@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="./Dashboard">CORTE FINAL REDES</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Dashboard" routerLinkActive="active"
+            >EMPLEADOS<i class="far fa-address-card"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active"
+            >Cerrar Sesion <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row">
+  
+  <div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+        <form enctype="multipart/form" method="POST">
+          <div class="form-group">
+            <input
+              type="text"
+              name="nombre"
+              [ngModel]="empleados.nombre"
+              [(ngModel)]="nombre"
+              placeholder="NOMBRES DEL EMPLEADO"
+              class="form-control"
+              autoFocus
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              name="apellido"
+              [(ngModel)]="empleados.apellido"
+              [(ngModel)]="apellido"
+              placeholder="APPELIDOS DEL EMPLEADO"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              name="telefono"
+              [ngModel]="empleados.telefono"
+              [(ngModel)]="telefono"
+              required= "no puede quedar vacio"
+              placeholder="TELEFONO DE CONTACTO"
+              class="form-control"
+              value="ES CON VALUE "
+            />
+          </div>
+          <div class="input-file">
+            <input
+              type="file"
+              name="image"
+              placeholder="imagen"
+              class="form-control"
+              (change)="selectImage($event)"
+            />
+          </div>
+          <button
+            class="btn btn-success btn-block"
+            (click)="edit ? updateEmpleado() : salvarEmpleado()"
+          >
+            GUARDAR
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card card-body text-center">
+      <img
+        [src]="empleados.imagen == '' ? 'assets/noimagen.png' : empleados.imagen"
+        alt=""
+        class="card-img-top"
+      />
+      <h5>
+        {{ empleados.id }}.
+        {{ empleados.nombre == "" ? "NOMBRE Y" : empleados.nombre }}
+        {{
+          empleados.apellido == "" ? "APELLIDO DEL EMPLEADO" : empleados.apellido
+        }}
+      </h5>
+      <p>
+        {{
+          empleados.telefono == "" ? "TELEFONO DEL EMPLEADO" : empleados.telefono
+        }}
+      </p>
+      <p>{{ empleados.created_at | date: "MM-dd-yyyy" }}</p>
+    </div>
+  </div>
+</div>
