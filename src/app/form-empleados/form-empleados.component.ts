@@ -66,7 +66,7 @@ export class FormEmpleadosComponent implements OnInit {
     if (nombrecito.length == 0 || apellidito.length == 0 || telefonito.length == 0) {
       alert('DATOS VACIOS POR FAVOR LLENE LOS DATOS');
     } else {
-      if (data.get('imagen').length == 9) {
+     if (data.get('imagen').length == 9) {
         console.log(data.get('imagen').length + 'ESTE ES EL LEGNT');
         alert('NO SUBIO IMAGEN SE GUARDARA CON UNA IMAGEN POR DEFECTO');
       }
@@ -93,7 +93,7 @@ export class FormEmpleadosComponent implements OnInit {
    if (nombrecito.length == 0 || apellidito.length == 0 || telefonito.length == 0) {
       alert('DATOS VACIOS POR FAVOR LLENE LOS DATOS');
     } else {
-      if (data.get('imagen').length == 9) {
+       if (data.get('imagen').length == 9) {
         console.log(data.get('imagen').length + 'ESTE ES EL LEGNT');
         alert('NO SUBIO IMAGEN SE GUARDARA CON UNA IMAGEN POR DEFECTO');
       }
