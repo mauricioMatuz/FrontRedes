@@ -2,7 +2,7 @@ import { Injectable, ɵConsole } from '@angular/core';
 //para leer el http
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Emplear } from '../app/models/empleado'
+import { Emplear } from '../app/models/empleado';
 //import { url } from 'inspector';
 
 @Injectable({
@@ -16,17 +16,17 @@ export class DashboardService {
   });
   id;
   constructor(protected http: HttpClient) {}
-  empleados = 'http://redesequipo.ddns.net:8080/api';
+  empleados = 'http://localhost:8080/api';
 
   getEmpleados() {
-    this.id = this.http.get(`${this.empleados}/empleado`)
-    console.log(this.id+ "  EN ANGULAR ID");
-    localStorage.setItem("id",this.id);
+    this.id = this.http.get(`${this.empleados}/empleado`);
+    console.log(this.id + '  EN ANGULAR ID');
+    localStorage.setItem('id', this.id);
     return this.id;
   }
 
   getId() {
-    return localStorage.getItem("id");
+    return localStorage.getItem('id');
   }
 
   getEmpleado(id: string): Observable<any> {
@@ -35,7 +35,7 @@ export class DashboardService {
 
   saveEmpleado(nombrecitos, apellidito, telefonito, data) {
     return this.http.post(
-      'http://redesequipo.ddns.net:8080/api/empleado/' +
+      'http://localhost:8080/api/empleado/' +
         nombrecitos +
         '/' +
         apellidito +
@@ -58,7 +58,7 @@ export class DashboardService {
     data
   ): Observable<any> {
     return this.http.put(
-      'http://redesequipo.ddns.net:8080/api/empleado/' +
+      'http://localhost:8080/api/empleado/' +
         id +
         '/' +
         nombrecitos +

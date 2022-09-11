@@ -11,7 +11,7 @@ export class RegistroService {
   constructor(protected http: HttpClient) { }
   registro(registro: any): Observable<any> {
     return this.http.post(
-      'http://redesequipo.ddns.net:8080/appi/registro',
+      'http://localhost:8080/appi/registro',
       registro
     );
   }

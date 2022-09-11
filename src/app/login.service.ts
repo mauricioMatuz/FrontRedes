@@ -13,7 +13,7 @@ export class LoginService {
   id;
   login(usuario, password): Observable<any> {
     this.id =  this.http.get(
-      'http://redesequipo.ddns.net:8080/appi/login/'+usuario+'/'+password);
+      'http://localhost:8080/appi/login/'+usuario+'/'+password);
     console.log(this.id+ "  EN ANGULAR ID");
     localStorage.setItem("id",this.id);
     return this.id;

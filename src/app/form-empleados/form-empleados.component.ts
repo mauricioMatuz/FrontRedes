@@ -66,10 +66,10 @@ export class FormEmpleadosComponent implements OnInit {
     if (nombrecito.length == 0 || apellidito.length == 0 || telefonito.length == 0) {
       alert('DATOS VACIOS POR FAVOR LLENE LOS DATOS');
     } else {
-     if (data.get('imagen').length == 9) {
-        console.log(data.get('imagen').length + 'ESTE ES EL LEGNT');
-        alert('NO SUBIO IMAGEN SE GUARDARA CON UNA IMAGEN POR DEFECTO');
-      }
+    //  if (data.get('imagen').length == 9) {
+    //     console.log(data.get('imagen').length + 'ESTE ES EL LEGNT');
+    //     alert('NO SUBIO IMAGEN SE GUARDARA CON UNA IMAGEN POR DEFECTO');
+    //   }
       this.DashboardService
       .saveEmpleado(nombrecito,apellidito,telefonito,data).subscribe(
         (res) => {
@@ -93,10 +93,10 @@ export class FormEmpleadosComponent implements OnInit {
    if (nombrecito.length == 0 || apellidito.length == 0 || telefonito.length == 0) {
       alert('DATOS VACIOS POR FAVOR LLENE LOS DATOS');
     } else {
-       if (data.get('imagen').length == 9) {
-        console.log(data.get('imagen').length + 'ESTE ES EL LEGNT');
-        alert('NO SUBIO IMAGEN SE GUARDARA CON UNA IMAGEN POR DEFECTO');
-      }
+      //  if (data.get('imagen').length == 9) {
+      //   console.log(data.get('imagen').length + 'ESTE ES EL LEGNT');
+      //   alert('NO SUBIO IMAGEN SE GUARDARA CON UNA IMAGEN POR DEFECTO');
+      // }
     this.DashboardService.updateEmpleado(this.id, nombrecito, apellidito, telefonito, data).subscribe(
       (res) => {
         console.log(res);
